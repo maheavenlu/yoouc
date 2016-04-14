@@ -1,0 +1,977 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HappyFamily</title>
+    <script src="~/Scripts/jquery.js"></script>
+    <script>
+$(function(){
+	$(".textmember li").mouseenter(function(){
+			var n= $(".textmember li").index($(this));
+
+			$(".textmember2").fadeOut();
+			$(".textmember2").eq(n).fadeIn(1000);
+		})
+	$(".textmember li").mouseenter(function(){
+			var n= $(".textmember li").index($(this));
+
+			$(".textmember li").removeClass("currentC");
+			$(".textmember li").eq(n).addClass("currentC");
+		})
+	$(".gameul li").mouseenter(function(){
+			var n= $(".gameul li").index($(this));
+			$(".gameul li").removeClass("currentB");
+			$(".gameul li").eq(n).addClass("currentB");
+			$(".gamebox1").fadeOut();
+			$(".gamebox1").eq(n).fadeIn(1000);
+		})
+
+})
+$(function(){
+
+	function run(){
+
+		$(".picinfbox").animate({left:-680},3000,
+		function(){
+			$(".picinfbox img:first").insertAfter($(".picinfbox img:last"));
+			$(".picinfbox").css({left:0});
+			});
+
+	};
+	setInterval(run,6000);
+
+
+
+
+})
+
+$(function(){
+	$(".favopicture").click(function(){
+		$(".favopicture .imgbox1").animate({left:-430},1000,
+		function(){
+			$(".imgbox1 img:first").insertAfter($(".imgbox1 img:last"));
+			$(".imgbox1").css({left:0});
+			})
+		})
+
+})
+
+$(function(){
+
+	$(".download .IOS").toggle(function(){
+		$(".downloadshow").fadeIn();
+		},function(){
+		$(".downloadshow").fadeOut();
+			})
+	$(".download .Andor").toggle(function(){
+		$(".downloadshow").fadeIn();
+		},function(){
+		$(".downloadshow").fadeOut();
+			})
+	$(".downloadshow").click(function(){
+
+		$(".downloadshow").fadeOut();
+		})
+})
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        h1, p {
+            list-style: none;
+            text-decoration: none;
+            font-weight: normal;
+            margin: 0;
+            padding: 0;
+        }
+
+        li, ul, dl, dd {
+            list-style: none;
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .header {
+            width: 100%;
+            height: 42px;
+            background-image: url('../../Content/images/headbac_01.png');
+            overflow: hidden;
+        }
+
+        .headerbox {
+            width: 1000px;
+            height: 42px;
+            margin: auto;
+            margin-top: 5px;
+        }
+
+            .headerbox .complogo {
+                width: 120px;
+                height: 40px;
+                float: left;
+            }
+
+            .headerbox dl {
+                float: right;
+                display: block;
+                width: 150px;
+                height: 30px;
+                margin: 0;
+                margin-top: 5px;
+            }
+
+            .headerbox .shop {
+                background-image: url('../../Content/images/headerlogo_03.png');
+                background-repeat: no-repeat;
+                background-position: left;
+                width: 50px;
+                height: 30px;
+                float: left;
+                margin: 0;
+                padding-left: 25px;
+                font-family: "微软雅黑";
+                font-size: 16px;
+                color: #666;
+                height: 25px;
+                display: block;
+                line-height: 25px;
+            }
+
+            .headerbox .gift {
+                background-image: url('../../Content/images/headerlogo_07.png');
+                background-repeat: no-repeat;
+                background-position: left;
+                width: 50px;
+                height: 30px;
+                float: left;
+                margin: 0;
+                padding-left: 25px;
+                font-family: "微软雅黑";
+                font-size: 16px;
+                color: #666;
+                height: 25px;
+                display: block;
+                line-height: 25px;
+            }
+
+            .headerbox dd:hover {
+                color: black;
+            }
+
+        .container {
+            width: 100%;
+            height: 550px;
+        }
+
+        .contain {
+            background-image: url('../../Content/images/beijin.png');
+            height: 550px;
+            margin: 0 auto;
+            width: 100%;
+            background-position: center;
+            overflow: hidden;
+        }
+
+            .contain .nav {
+                width: 100%;
+                height: 110px;
+                background-image: url('../../Content/images/touming2.png');
+                margin-top: 440px;
+                position: relative;
+            }
+
+        .icon {
+            position: absolute;
+            left: 15%;
+            top: -80px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .download {
+            position: absolute;
+            width: 203px;
+            height: 103px;
+            left: 70%;
+            top: 5px;
+        }
+
+            .download img {
+                cursor: pointer;
+            }
+
+        .downloadshow {
+            position: absolute;
+            widows: 180px;
+            height: 177px;
+            left: 58%;
+            top: -70px;
+            display: none;
+        }
+
+        .code1 {
+            position: absolute;
+            left: 71%;
+            top: -400px;
+        }
+
+        .code2 {
+            position: absolute;
+            left: 72%;
+            top: -230px;
+            cursor: pointer;
+        }
+
+        .navcation {
+            width: 400px;
+            height: 40px;
+            position: absolute;
+            left: 30%;
+        }
+
+            .navcation .currentA {
+                background-image: url('../../Content/images/biaoji_08.png');
+                background-repeat: no-repeat;
+                background-position: center bottom;
+                color: #FFF;
+            }
+
+        .container p {
+            float: left;
+            font-size: 36px;
+            margin: 0;
+            font-family: "宋体";
+            margin-right: 20px;
+            display: block;
+            margin-top: 40px;
+            color: #FFF;
+            text-shadow: 2px 2px 1px #333;
+        }
+
+        .navcation p a {
+            font-size: 36px;
+            margin: 0;
+            font-family: "宋体";
+            display: block;
+            height: 75px;
+            color: #CCC;
+            text-shadow: 2px 2px 1px #333;
+        }
+
+        .bodybox {
+            width: 100%;
+            height: 1400px;
+            background-image: url('../../Content/images/bodybeijin.png');
+        }
+
+        .columns {
+            width: 1000px;
+            height: 1400px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding-top: 40px;
+        }
+
+        .news {
+            width: 1000px;
+            height: 100px;
+            background-image: url('../../Content/images/line_03.png');
+            background-repeat: repeat-x;
+            background-position: bottom;
+            margin-bottom: 40px;
+        }
+
+            .news h1 {
+                font-size: 42px;
+                font-family: "迷你简菱心";
+                color: #3c3c3c;
+                display: block;
+                padding-left: 75px;
+                background-image: url('../../Content/images/yaoqianshu_07.png');
+                background-repeat: no-repeat;
+                background-position: left;
+                height: 62px;
+                line-height: 70px;
+            }
+
+        .newsbox {
+            width: 1000px;
+            height: 365px;
+        }
+
+        .textinf {
+            width: 300px;
+            height: 340px;
+            float: left;
+            margin-right: 20px;
+            overflow: hidden;
+        }
+
+            .textinf .textmember {
+                padding: 0;
+                width: 300px;
+                margin: 0;
+            }
+
+                .textinf .textmember li {
+                    margin: 0;
+                    line-height: 40px;
+                    width: 100px;
+                    height: 40px;
+                    cursor: pointer;
+                }
+
+                .textinf .textmember .currentC {
+                    background-image: url('../../Content/images/point_03.png');
+                    background-repeat: no-repeat;
+                    background-position: center left;
+                }
+
+                .textinf .textmember .current {
+                    background-image: url('../../Content/images/xiahua_07.png');
+                    background-repeat: repeat-x;
+                    background-position: bottom;
+                }
+
+            .textinf .textbox {
+                width: 900px;
+                height: 300px;
+            }
+
+            .textinf .textmember2 {
+                width: 300px;
+                height: 300px;
+                display: block;
+                float: left;
+            }
+
+                .textinf .textmember2 dd {
+                    margin: 0;
+                    margin-top: 30px;
+                    width: 270px;
+                }
+
+                .textinf .textmember2 a {
+                    color: #666;
+                    font-family: "微软雅黑";
+                }
+
+                .textinf .textmember2 p {
+                    font-family: "微软雅黑";
+                }
+
+                .textinf .textmember2 a:hover {
+                    color: #333;
+                }
+
+            .textinf .current {
+                background-image: url('../../Content/images/xiahua_19.png');
+                background-repeat: repeat-x;
+                background-position: bottom;
+            }
+
+        .picfather {
+            width: 680px;
+            height: 340px;
+            float: left;
+            overflow: hidden;
+        }
+
+        .picinf {
+            width: 2040px;
+            height: 340px;
+            position: relative;
+        }
+
+        .picinfbox {
+            width: 2040px;
+            height: 340px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+            .picinfbox img {
+                float: left;
+            }
+
+        .newsbox ul {
+            width: 280px;
+            height: 40px;
+            margin-left: 50px;
+            display: block;
+            padding: 0;
+        }
+
+        .newsbox li {
+            margin: 0;
+            font-size: 20px;
+            font-family: "微软雅黑";
+            float: left;
+            margin-right: 40px;
+            display: block;
+            width: 40px;
+            height: 30px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .newsbox dd {
+            display: block;
+            margin-left: 20px;
+            font-size: 14px;
+            width: 250px;
+            height: 25px;
+            margin-top: 25px;
+            background-image: url('../../Content/images/line_03.png');
+            background-repeat: repeat-x;
+            background-position: bottom;
+            line-height: 20px;
+            clear: left;
+        }
+
+        .gamebox {
+            width: 530px;
+            height: 460px;
+            float: left;
+            margin-right: 40px;
+            margin-top: 20px;
+        }
+
+        .games {
+            width: 530px;
+            height: 90px;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            background-image: url('../../Content/images/line_03.png');
+            background-repeat: repeat-x;
+            background-position: bottom;
+        }
+
+            .games h1 {
+                font-size: 36px;
+                font-family: "方正兰亭超细黑简体";
+                display: block;
+                padding-left: 70px;
+                width: 200px;
+                height: 71px;
+                background-image: url('../..//Content/images/pic_03.png');
+                background-repeat: no-repeat;
+                background-position: left;
+                line-height: 80px;
+            }
+
+        .Gameinformation {
+            width: 530px;
+            height: 280px;
+            overflow: hidden;
+        }
+
+            .Gameinformation .gameul {
+                width: 530px;
+                height: 63px;
+                display: block;
+            }
+
+            .Gameinformation li {
+                float: left;
+                font-size: 24px;
+                display: block;
+                cursor: pointer;
+            }
+
+            .Gameinformation .ga1 {
+                margin: 10px 40px;
+                width: 100px;
+                height: 35px;
+            }
+
+            .Gameinformation .currentB {
+                background-image: url('../../Content/images/xiahua_07.png');
+                background-repeat: repeat-x;
+                background-position: bottom;
+            }
+
+            .Gameinformation .ga2 {
+                margin: 10px 30px;
+                width: 120px;
+                height: 35px;
+            }
+
+            .Gameinformation .ga3 {
+                margin: 10px 30px;
+                width: 100px;
+                height: 35px;
+            }
+
+        .gamepic {
+            width: 530px;
+            height: 220px;
+        }
+
+            .gamepic .gamebox1 {
+                width: 530px;
+                height: 220px;
+            }
+
+        .gamebox1 .imgbox {
+            width: 176px;
+            height: 110px;
+            float: left;
+        }
+
+        .imgbox img {
+            display: block;
+            margin: 20px auto;
+        }
+
+        .picbox {
+            width: 430px;
+            height: 460px;
+            float: left;
+            margin-top: 20px;
+        }
+
+        .pics {
+            width: 430px;
+            height: 90px;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            background-image: url('../../Content/images/line_03.png');
+            background-repeat: repeat-x;
+            background-position: bottom;
+        }
+
+            .pics h1 {
+                font-size: 36px;
+                font-family: "方正兰亭超细黑简体";
+                display: block;
+                padding-left: 70px;
+                width: 200px;
+                height: 71px;
+                background-image: url('../../Content/images/pic_06.png');
+                background-repeat: no-repeat;
+                background-position: left;
+                line-height: 80px;
+            }
+
+        .favopicture {
+            width: 430px;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+            .favopicture .imgbox1 {
+                width: 1290px;
+                height: 280px;
+                position: absolute;
+            }
+
+        .imgbox1 img {
+            cursor: pointer;
+        }
+
+        .aboutusbox {
+            width: 1000px;
+            height: 380px;
+            clear: left;
+        }
+
+        .aboutus {
+            width: 1000px;
+            height: 90px;
+            background-image: url('../../Content/images/line_03.png');
+            background-repeat: repeat-x;
+            background-position: bottom;
+        }
+
+            .aboutus h1 {
+                font-size: 36px;
+                font-family: "方正兰亭超细黑简体";
+                display: block;
+                padding-left: 70px;
+                width: 200px;
+                height: 71px;
+                background-image: url('../../Content/images/pic_10.png');
+                background-repeat: no-repeat;
+                background-position: left;
+                line-height: 80px;
+            }
+
+        .aboutusinfor {
+            width: 1000px;
+            height: 310px;
+        }
+
+            .aboutusinfor .infor1 {
+                width: 250px;
+                height: 280px;
+                float: left;
+            }
+
+        .infor1 img {
+            display: block;
+            margin: 5px auto;
+            margin-top: 60px;
+        }
+
+        .infor1 h1 {
+            margin: 10px auto;
+            display: block;
+            width: 100px;
+            color: #666;
+            font-size: 24px;
+        }
+
+        .infor1 h2 {
+            margin: 15px auto;
+            display: block;
+            font-size: 14px;
+            color: #666;
+            font-family: "微软雅黑";
+            width: 130px;
+        }
+
+        .aboutusinfor .infor2 {
+            width: 250px;
+            height: 280px;
+            float: left;
+        }
+
+        .infor2 img {
+            display: block;
+            margin: 5px auto;
+            margin-top: 60px;
+        }
+
+        .infor2 h1 {
+            margin: 15px auto;
+            display: block;
+            width: 100px;
+            color: #666;
+            font-size: 24px;
+        }
+
+        .infor2 h2 {
+            margin: 15px auto;
+            display: block;
+            font-size: 14px;
+            color: #666;
+            font-family: "微软雅黑";
+            width: 90px;
+        }
+
+        .aboutusinfor .infor3 {
+            width: 250px;
+            height: 280px;
+            float: left;
+        }
+
+        .infor3 img {
+            display: block;
+            margin: 5px auto;
+            margin-top: 60px;
+        }
+
+        .infor3 h1 {
+            margin: 15px auto;
+            display: block;
+            width: 100px;
+            color: #666;
+            font-size: 24px;
+        }
+
+        .infor3 h2 {
+            margin: 15px auto;
+            display: block;
+            font-size: 14px;
+            color: #666;
+            font-family: "微软雅黑";
+            width: 140px;
+        }
+
+        .aboutusinfor .infor4 {
+            width: 250px;
+            height: 280px;
+            float: left;
+        }
+
+        .infor4 img {
+            display: block;
+            margin: 5px auto;
+            margin-top: 60px;
+        }
+
+        .infor4 h1 {
+            margin: 10px auto;
+            display: block;
+            width: 100px;
+            color: #666;
+            font-size: 24px;
+        }
+
+        .infor4 h2 {
+            margin: 15px auto;
+            display: block;
+            font-size: 14px;
+            color: #666;
+            font-family: "微软雅黑";
+            width: 100px;
+        }
+
+        .footer {
+            width: 100%;
+            height: 110px;
+            background-color: #2f2f2f;
+        }
+
+        .footbox {
+            width: 1000px;
+            height: 110px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .logo {
+            width: 180px;
+            height: 40px;
+            margin-top: 30px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .textline {
+            width: 450px;
+            height: 60px;
+            float: left;
+            margin-top: 30px;
+            margin-left: 40px;
+        }
+
+            .textline h1 {
+                font-size: 12px;
+                color: #999;
+                font-family: "微软雅黑";
+                line-height: 25px;
+            }
+
+        .copyright {
+            width: 300px;
+            height: 60px;
+            float: left;
+            margin-top: 20px;
+        }
+
+            .copyright h1 {
+                font-size: 12px;
+                color: #999;
+                font-family: "微软雅黑";
+                line-height: 25px;
+            }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="headerbox">
+            <div class="complogo">
+                <img src="~/Content/images/companylogo2_07.png">
+            </div>
+            <dl class="shopgift">
+                <a href=""><dd class="shop">礼包</dd></a>
+                <a href=""><dd class="gift">商城</dd></a>
+            </dl>
+        </div>
+    </div>
+    <div class="container">
+        <div class="contain">
+            <div class="nav">
+                <!--<img src="~/Content/images/580005_1_03.png" />-->
+                <div class="icon">
+                    <a href=""><img src="~/Content/images/icon1_03.png"></a>
+                </div>
+                <div class="download">
+                    <a class="IOS"><img src="~/Content/images/download_03.png"></a>
+                    <a class="Andor"><img src="~/Content/images/download_06.png"></a>
+                </div>
+                <div class="downloadshow">
+                    <img src="~/Content/images/code1_03.png">
+                </div>
+                <div class="code1">
+                    <img src="~/Content/images/code1_03.png">
+                </div>
+                <div class="code2">
+                    <img src="~/Content/images/yuyue_03.png">
+                </div>
+                <div class="navcation">
+                    <p><a class="currentA" href="GetView">新闻活动</a></p>
+                    <p>|</p>
+                    <p> <a href="GetView2">游戏介绍</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bodybox">
+
+        <div class="columns">
+            <div class="news">
+                <h1>新闻活动</h1>
+            </div>
+            <div class="newsbox">
+                <div class="textinf">
+                    <ul class="textmember">
+                        <li class="currentC"><center>综合</center></li>
+                        <li><center>新闻</center></li>
+                        <li><center>活动</center></li>
+                    </ul>
+                    <div class="textbox">
+                        <dl class="textmember2">
+                            <dd><a href="" style="float:left">最新活动最新新闻</a><p style="float:right">12/12</p></dd>
+                            <dd><a href="" style="float:left">最新活动最新新闻</a><p style="float:right">12/12</p></dd>
+                            <dd><a href="" style="float:left">最新活动最新新闻</a><p style="float:right">12/12</p></dd>
+                            <dd><a href="" style="float:left">最新活动最新新闻</a><p style="float:right">12/12</p></dd>
+                            <dd><a href="" style="float:left">最新活动最新新闻</a><p style="float:right">12/12</p></dd>
+                        </dl>
+                        <dl class="textmember2">
+                            <dd><a href="" style="float:left">最新活动最新新闻</a><p style="float:right">01/13</p></dd>
+                            <dd><a href="" style="float:left">最新活动最新新闻</a><p style="float:right">01/13</p></dd>
+                            <dd><a href="" style="float:left">最新活动最新新闻</a><p style="float:right">01/13</p></dd>
+                            <dd><a href="" style="float:left">最新活动最新新闻</a><p style="float:right">01/13</p></dd>
+                            <dd><a href="" style="float:left">最新活动最新新闻</a><p style="float:right">01/13</p></dd>
+                        </dl>
+                        <dl class="textmember2">
+                            <dd><a href="" style="float:left">最新活动最新新闻</a><p style="float:right">02/14</p></dd>
+                            <dd><a href="" style="float:left">最新活动最新新闻</a><p style="float:right">02/14</p></dd>
+                            <dd><a href="" style="float:left">最新活动最新新闻</a><p style="float:right">02/14</p></dd>
+                            <dd><a href="" style="float:left">最新活动最新新闻</a><p style="float:right">02/14</p></dd>
+                            <dd><a href="" style="float:left">最新活动最新新闻</a><p style="float:right">02/14</p></dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="picfather">
+                    <div class="picinf">
+                        <div class="picinfbox">
+                            <img src="~/Content/images/text_03.png">
+                            <img src="~/Content/images/newspic.png">
+                            <img src="~/Content/images/text_03.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="infbox">
+                <div class="gamebox">
+                    <div class="games">
+                        <h1>游戏资料</h1>
+                    </div>
+                    <div class="Gameinformation">
+                        <ul class="gameul">
+                            <li class="ga1 currentB">建筑欣赏</li>
+                            <li class="ga2">动植物欣赏</li>
+                            <li class="ga3">装饰欣赏</li>
+                        </ul>
+                        <div class="gamepic">
+                            <div class="gamebox1">
+                                <div class="imgbox"><img src="~/Content/images/building_07.png"></div>
+                                <div class="imgbox"><img src="~/Content/images/building_10.png"></div>
+                                <div class="imgbox"><img src="~/Content/images/building_13.png"></div>
+                                <div class="imgbox"><img src="~/Content/images/Building_stall_G_03.png"></div>
+                                <div class="imgbox"><img src="~/Content/images/Building_Brauhaus_N_03.png"></div>
+                                <div class="imgbox"><img src="~/Content/images/Building__honeycomb1_G_03.png"></div>
+                            </div>
+                            <div class="gamebox1">
+                                <div class="imgbox"><img src="~/Content/images/Animation_Pig_leftdown_walk00_03.png"></div>
+                                <div class="imgbox"><img src="~/Content/images/Animation_Chicken_left_full02_03.png"></div>
+                                <div class="imgbox"><img src="~/Content/images/Animation_Cattle_leftdown_full00_03.png"></div>
+                                <div class="imgbox"><img src="~/Content/images/flower10_03.png"></div>
+                                <div class="imgbox"><img src="~/Content/images/flower11_03.png"></div>
+                                <div class="imgbox"><img src="~/Content/images/flower8_03.png"></div>
+                            </div>
+                            <div class="gamebox1">
+                                <div class="imgbox"><img src="~/Content/images/580005_1_03.png"></div>
+                                <div class="imgbox"><img src="~/Content/images/580011_1_03.png"></div>
+                                <div class="imgbox"><img src="~/Content/images/light_03.png"></div>
+                                <div class="imgbox"><img src="~/Content/images/stump3.png"></div>
+                                <div class="imgbox"><img src="~/Content/images/straw_03.png"></div>
+                                <div class="imgbox"><img src="~/Content/images/stump2.png"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="picbox">
+                    <div class="pics">
+                        <h1>图片欣赏</h1>
+                    </div>
+                    <div class="favopicture">
+                        <div class="imgbox1">
+                            <img src="~/Content/images/picfavo_03_03.png">
+                            <img src="~/Content/images/picfavo_04.png">
+                            <img src="~/Content/images/picfavo_04_03.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="aboutusbox">
+                <div class="aboutus">
+                    <h1>关于我们</h1>
+                </div>
+                <div class="aboutusinfor">
+                    <div class="infor1">
+                        <img src="~/Content/images/pic-2_03.png">
+                        <h1>官方微信</h1>
+                        <h2>收听官方微信，获取<br>&nbsp;&nbsp;第一手游戏资讯</h2>
+                    </div>
+                    <div class="infor2">
+                        <img src="~/Content/images/pic-2_05.png">
+                        <h1>官方论坛</h1>
+                        <h2>玩家讨论社区</h2>
+                    </div>
+                    <div class="infor3">
+                        <img src="~/Content/images/pic-2_07.png">
+                        <h1>联系客服</h1>
+                        <h2>了解联系官方客服渠道</h2>
+                    </div>
+                    <div class="infor4">
+                        <img src="~/Content/images/pic-2_09.png">
+                        <h1>自助服务</h1>
+                        <h2>举报，建议意见</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footbox">
+            <div class="logo">
+                <img src="~/Content/images/companylogo_03.png">
+            </div>
+            <div class="textline">
+                <h1>健康游戏公告:&nbsp;&nbsp;抵制不良游戏&nbsp;&nbsp;拒绝盗版游戏&nbsp;&nbsp;注意自我保护&nbsp;&nbsp;谨防受骗上当&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;适度游戏益脑&nbsp;&nbsp;沉迷游戏伤身&nbsp;合理安排时间&nbsp;&nbsp;享受健康生活</h1>
+            </div>
+            <div class="copyright">
+                <h1>
+                    COPYRIGHT © 2016 RUIYA. ALL RIGHTS RESERVED.瑞亚科技版权所有
+                    浙网文[2014]0299-049号 | 增值电信许可 浙B2-20150520 | 备案号:浙ICP备14028342号-3
+                </h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
