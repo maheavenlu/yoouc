@@ -19,7 +19,14 @@ namespace ruiya.Controllers
             return View("HappyFamilyPage");
         }
 
+        [Route("ruiya/happyFamily2")]
+        public ActionResult GetHappyFamilyPage2()
+        {
+            return View("HappyFamilyPage2");
+        }
+
         [Route("ruiya/happyFamilyHelp")]
+        [Route("ruiya/happyFamily/help.html")]
         public ActionResult GetHappyFamilyHelpPage()
         {
             return View("HappyFamilyHelpPage");
